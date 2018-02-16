@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+{% include "header.html" %}
+
+<body>
+
+    <!-- Barre de navigation : Logo + bouton S'enregistrer -->
+    <nav class="navbar navbar-custom">
+        <p class="navbar-brand">
+            <img src="" width="40" class="d-inline-block align-top"> Application X </p>
+        <div id="register">
+            <button class="btn btn-primary float-right" type="button" data-toggle="modal" data-target="#registration-form">S'enregistrer</button>
+        </div>
+    </nav>
+
+    <!-- Formulaire de connection -->
+    <div class=" container-fluid h-75">
+        <div class="row h-100 align-items-center">
+            <div class="col-sm-6 col-centered" id="connection-form">
+                <form class="form-horizontal" action="{{ url_for('tableauDeBord') }}" method="post">
+
+                    <!-- Courriel -->
+                    <div class="row mt-4">
+                        <label class="control-label col-md-5" for="courriel"> Courriel </label>
+                        <div class="col-md-7">
+                            <input class="form-control" id="courriel" name="courriel" type="text" />
+                        </div>
+                    </div>
+
+                    <!-- Mot de passe -->
+                    <div class="row mt-4">
+                        <label class="control-label col-md-5 requiredField" for="motDePasse"> Mot de passe </label>
+                        <div class="col-md-7">
+                            <input class="form-control" id="motDePasse" name="motDePasse" type="text" />
+                        </div>
+                    </div>
+
+                    <!-- Bouton : Se connecter -->
+                    <div class="row mt-4 text-center">
+                        <div class="col-md-12">
+                            <button class="btn btn-primary" name="seConnecter" type="submit">Se connecter</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Formulaire d'enregistrement -->
+        <div class="modal fade" id="registration-form">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel">Créer un compte</h4>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="modal-body">
+                        <form action="{{ url_for('tableauDeBord') }}" method="post">
+
+                            <!-- Nom -->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5" for="nom"> Nom </label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="nom" name="nom" type="text" />
+                                </div>
+                            </div>
+
+                            <!-- Prénom -->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5" for="prenom"> Prénom </label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="prenom" name="prenom" type="text" />
+                                </div>
+                            </div>
+
+                            <!-- Courriel -->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5" for="courriel"> Courriel </label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="courriel" name="courriel" type="text" />
+                                </div>
+                            </div>
+
+                            <!-- Date de naissance -->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5" for="dateDeNaissance"> Date de naissance </label>
+                                <div class="col-md-7">
+                                    <input class="form-control" type="date" id="dateDeNaissance" name="dateDeNaissance">
+                                </div>
+                            </div>
+
+                            <!-- Sport favori -->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5" for="sportFavori"> Sport favori </label>
+                                <div class="col-md-7">
+                                    <select class="custom-select" id="sportFavori" name="sportFavori">
+                                        <option value="courseAPied">Course à pied</option>
+                                        <option value="marche">Marche</option>
+                                        <option value="velo">Vélo</option>
+                                        <option value="nage">Nage</option>
+                                        <option value="skiDeFond">Ski de fond</option>
+                                    
+                                </select>
+                                </div>
+                            </div>
+
+                            <!-- Mot de passe -->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5 requiredField" for="motDePasse"> Mot de passe </label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="motDePasse" name="motDePasse" type="password" />
+                                </div>
+                            </div>
+
+                            <!-- Confirmer Mot de passe -->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5 requiredField" for="motDePasseConfirm"> Confirmer le mot de passe </label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="motDePasse" name="motDePasseConfirm" type="password" />
+                                </div>
+                            </div>
+
+
+                            <!-- Footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                <button class="btn btn-primary" name="valider" type="submit">Valider</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

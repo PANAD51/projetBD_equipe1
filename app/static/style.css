@@ -1,0 +1,51 @@
+body {
+    background-image: url("bg.png");
+}
+
+body,
+html {
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+
+/* Barre de navigation */
+
+.navbar-custom {
+    background-color: #C8C8C8;
+    font-weight: bold;
+    border-bottom: 3px solid #428bca;
+}
+
+
+/* Bouton enregistrer */
+
+#register {
+    margin-right: 100px;
+}
+
+
+/* Formulaire de connexion */
+
+#connection-form {
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid #428bca;
+    border-radius: 25px;
+    background: #C8C8C8;
+    opacity: 0.6;
+    font-weight: bold;
+}
+
+
+/* Formulaire d'inscription */
+
+.modal-header {
+    background: #428bca;
+}
+
+.modal-body {
+    font-weight: bold;
+}
