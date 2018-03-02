@@ -9,9 +9,97 @@
     <nav class="navbar navbar-custom">
         <p class="navbar-brand">
             <img src=" " width="40 " class="d-inline-block align-top "> Application X </p>
+
+        <div id="boutonBarreNavigation">
+            <a href="{{ url_for('profil', user=0) }}" class="btn btn-primary">Mon profil</a>
+        </div>
     </nav>
 
 
+
+
+    <!-- Option pour la sélection des activités -->
+    <div id="containerOption" class="mt-5">
+
+        <h1> Afficher les activités : </h1>
+
+        <div class="radio">
+            <label><input type="radio" name="visualisationActivites"> Plus récentes</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="visualisationActivites"> Mes activités</label>
+        </div>
+    </div>
+
+    <!-- Listes des activités-->
+    <div id="containerActivites">
+        <div class="card-deck mt-5 col-lg-12">
+            <div class="card col-lg-4">
+                <img class="card-img-top" src="../static/photo2.jpg">
+                <div class="card-block">
+                    <h1 class="card-title">Nom de l'activité1</h1>
+                    <p class="card-text">Les détails sur l'activité</p>
+                    <a href="{{ url_for('activite', id=0) }}" class="btn btn-primary">Détails</a>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Date</small>
+                </div>
+            </div>
+
+            <div class="card col-lg-4">
+                <img class="card-img-top" src="../static/photo2.jpg">
+                <div class="card-block">
+                    <h1 class="card-title">Nom de l'activité1</h1>
+                    <p class="card-text">Les détails sur l'activité</p>
+                    <a href="#" class="btn btn-primary">Détails</a>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Date</small>
+                </div>
+            </div>
+
+            <div class="card col-lg-4">
+                <img class="card-img-top" src="../static/photo2.jpg">
+                <div class="card-block">
+                    <h1 class="card-title">Nom de l'activité1</h1>
+                    <p class="card-text">Les détails sur l'activité</p>
+                    <a href="#" class="btn btn-primary">Détails</a>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Date</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-deck mt-5 col-lg-12">
+            <div class="card col-lg-4">
+                <img class="card-img-top" src="../static/photo2.jpg">
+                <div class="card-block">
+                    <h1 class="card-title">Nom de l'activité1</h1>
+                    <p class="card-text">Les détails sur l'activité</p>
+                    <a href="#" class="btn btn-primary">Détails</a>
+                </div>
+            </div>
+
+            <div class="card col-lg-4">
+                <img class="card-img-top" src="../static/photo2.jpg">
+                <div class="card-block">
+                    <h1 class="card-title">Nom de l'activité1</h1>
+                    <p class="card-text">Les détails sur l'activité</p>
+                    <a href="#" class="btn btn-primary">Détails</a>
+                </div>
+            </div>
+
+            <div class="card col-lg-4">
+                <img class="card-img-top" src="../static/photo2.jpg">
+                <div class="card-block">
+                    <h1 class="card-title">Nom de l'activité1</h1>
+                    <p class="card-text">Les détails sur l'activité</p>
+                    <a href="#" class="btn btn-primary">Détails</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -12,10 +12,10 @@ def connexion():
 def tableauDeBord ():
         return render_template("tableauDeBord.html")
 
-@app.route('/ddd')
-def profile ():
-    return render_template("profile.html")
+@app.route('/profil/<user>', methods=['GET','POST'])
+def profil (user):
+    return render_template("profil.html")
 
-@app.route('/dddd')
-def activite ():
+@app.route('/activite/<id>', methods=['GET','POST'])
+def activite (id):
     return render_template("activite.html")

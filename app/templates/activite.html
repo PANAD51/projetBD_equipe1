@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+{% include "header.html" %}
+
+<body>
+
+    <!-- Barre de navigation : Logo -->
+    <nav class="navbar navbar-custom">
+        <p class="navbar-brand">
+            <img src=" " width="40 " class="d-inline-block align-top "> Application X </p>
+    </nav>
+
+
+
+    <h1> Nom de l'activité </h1>
+
+    <!-- Carte Leaflet pour afficher les données de l'activité -->
+    <div id="map" class="mt-5"></div>
+    <script src="../static/map.js"></script>
+
+
+    <!-- Graphique pour afficher la vitesse et l'altitude -->
+    <div id="graphique" class="mt-5"></div>
+    <script src="../static/graphique.js"></script>
+
+
+
+</body>
+
+</html>

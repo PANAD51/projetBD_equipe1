@@ -5,8 +5,6 @@ body {
 body,
 html {
     height: 100vh;
-    overflow-y: hidden;
-    overflow-x: hidden;
 }
 
 
@@ -15,14 +13,67 @@ html {
 .navbar-custom {
     background-color: #C8C8C8;
     font-weight: bold;
-    border-bottom: 3px solid #428bca;
+    border-bottom: 3px solid #428BCA;
 }
 
 
-/* Bouton enregistrer */
+/* Espacement entre les boutons sur la barre de navigation */
 
-#register {
-    margin-right: 100px;
+.btn {
+    margin-left: 10px;
+}
+
+
+/* Image sur la page de connexion */
+
+#descriptionAcceuil {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    text-align: center;
+}
+
+#imageConnexion {
+    width: 50%;
+    border: 3px solid #428BCA;
+    border-radius: 50px;
+}
+
+#containerActivites {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+#containerOption {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+/* Pour les écrans inférieur à 640 pixels */
+
+@media screen and (max-width: 640px) {
+    #imageConnexion {
+        width: 100%;
+        border: 3px solid #428BCA;
+        border-radius: 50px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* Card */
+
+.card {
+    border: 3px solid #428BCA;
+    border-radius: 20px;
+    background-color: #C8C8C8;
 }
 
 
@@ -32,7 +83,7 @@ html {
     padding: 20px;
     margin-left: auto;
     margin-right: auto;
-    border: 5px solid #428bca;
+    border: 5px solid #428BCA;
     border-radius: 25px;
     background: #C8C8C8;
     opacity: 0.6;
@@ -48,4 +99,20 @@ html {
 
 .modal-body {
     font-weight: bold;
+}
+
+
+/* Style pour Activite */
+
+#map {
+    width: 50%;
+    height: 80vh;
+    margin-left: 50%;
+    border: 5px solid #428BCA;
+    border-radius: 25px;
+}
+
+#graphique {
+    width: 50%;
+    margin-right: 40%;
 }
