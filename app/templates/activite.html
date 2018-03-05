@@ -1,31 +1,106 @@
 <!DOCTYPE html>
 <html>
 
+<!-- Chargement des fichiers nécessaires (librairies, plugins, fichier de style) -->
 {% include "header.html" %}
 
 <body>
 
-    <!-- Barre de navigation : Logo -->
-    <nav class="navbar navbar-custom">
-        <p class="navbar-brand">
-            <img src=" " width="40 " class="d-inline-block align-top "> Application X </p>
-    </nav>
+    <!-- Barre de navigation -->
+    {% include "navigation.html" %}
 
+    <div class="container">
+        <!-- Informations sur l'activité -->
+        <div class="row">
+            <div class="col-md-5 mt-2">
+                <h4> Nom de l'activité </h4>
+                <br>
+                <h5> Sport : </h5>
+                <h5> Distance :</h5>
+            </div>
+            <div class="col-md-5 mt-2">
+                <h5> Vitesse moyenne :</h5>
+                <h5> Dénivelé positif : </h5>
+                <h5> Dénivelé négatif : </h5>
+                <h5> Durée écoulé :</h5>
+            </div>
 
+            <!-- Bouton de modification de l'activité -->
+            <div class="col-md-1 mt-2">
+                <button class="btn btn-primary float-right" type="button" data-toggle="modal" data-target="#modification-form">Modifier l'activité</button>
+            </div>
+        </div>
 
-    <h1> Nom de l'activité </h1>
+        <!-- Carte Leaflet pour afficher les données de l'activité -->
+        <div class="row">
+            <div class="col-md-12 mt-2" id="map">
+                <script src="../static/map.js"></script>
+            </div>
+        </div>
 
-    <!-- Carte Leaflet pour afficher les données de l'activité -->
-    <div id="map" class="mt-5"></div>
-    <script src="../static/map.js"></script>
+        <!-- Graphique pour afficher la vitesse et l'altitude -->
+        <div class="row">
+            <div class="col-md-12 mt-3" id="graphique">
+                <script src="../static/graphique.js"></script>
+            </div>
+        </div>
 
+        <!-- Formulaire de modification de l'activité (lors d'un click sur le bouton Modifier l'activité) -->
+        <div class="modal fade" id="modification-form">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="">Modification de l'activité</h4>
+                    </div>
 
-    <!-- Graphique pour afficher la vitesse et l'altitude -->
-    <div id="graphique" class="mt-5"></div>
-    <script src="../static/graphique.js"></script>
+                    <!-- Body -->
+                    <div class="modal-body">
+                        <form action="" method="post">
 
+                            <!-- Nom de l'activité -->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5" for="nomActivite"> Nom de l'activité </label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="nomActivite" name="nomActivite" type="text" />
+                                </div>
+                            </div>
 
+                            <!-- Sport-->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5" for="sport">Sport</label>
+                                <div class="col-md-7">
+                                    <select class="custom-select" id="sport" name="sport">
+                                        <option value="courseAPied">Course à pied</option>
+                                        <option value="marche">Marche</option>
+                                        <option value="velo">Vélo</option>
+                                        <option value="nage">Nage</option>
+                                        <option value="skiDeFond">Ski de fond</option> 
+                                    </select>
+                                </div>
+                            </div>
 
+                            <!-- Matériel-->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5" for="materiel"> Matériel </label>
+                                <div class="col-md-7">
+                                    <select class="custom-select" id="materiel" name="materiel">
+                                        <option value="materiel1"> Soulier X + X km </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                <button class="btn btn-primary" name="modification-form" type="submit">Valider</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

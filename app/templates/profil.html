@@ -1,19 +1,118 @@
 <!DOCTYPE html>
 <html>
 
+<!-- Chargement des fichiers nécessaires (librairies, plugins, fichier de style) -->
 {% include "header.html" %}
 
 <body>
 
-    <!-- Barre de navigation : Logo -->
-    <nav class="navbar navbar-custom">
-        <p class="navbar-brand">
-            <img src=" " width="40 " class="d-inline-block align-top "> Application X </p>
-    </nav>
+    <!-- Barre de navigation -->
+    {% include "navigation.html" %}
 
+
+    <div class="container">
+
+        <!-- Photo de profil -->
+        <div class="row">
+            <div class="col-md-3 mt-2">
+                <img src="../static/photo2.jpg" id="photoDeProfil" height="170" width="170">
+
+            </div>
+
+            <!-- Nom de l'athlète -->
+            <div class="col-md-3 mt-2">
+                <h1 id="nomAthlete"> Nom </h1>
+
+                <!-- Choix du sport pour les statistiques -->
+                <br><br>
+                <h4> Choisir un sport </h4>
+                <form action="" method="post">
+                    <select class="custom-select" id="sport" name="sport">
+                                        <option value="courseAPied" selected>Course à pied</option>
+                                        <option value="marche">Marche</option>
+                                        <option value="velo">Vélo</option>
+                                        <option value="nage">Nage</option>
+                                        <option value="skiDeFond">Ski de fond</option> 
+                        </select>
+                </form>
+            </div>
+        </div>
+
+        <!-- Statistiques - année -->
+        <div class="row">
+            <div class="col-md-6 mt-3">
+                <h3> Statistiques pour cette année </h3>
+                <h5> Distance : </h5>
+                <h5> Temps : </h5>
+                <h5> Dénivelé positif : </h5>
+            </div>
+
+            <!-- Statistiques - semaine -->
+            <div class="col-md-6 mt-3">
+                <h3> Statistiques pour cette semaine </h3>
+                <h5> Distance : </h5>
+                <h5> Temps : </h5>
+                <h5> Dénivelé positif : </h5>
+            </div>
+        </div>
+
+        <!-- Matériel -->
+        <div class="row">
+            <div class="col-md-6 mt-3">
+                <h3> Matériel de sport : </h3>
+                <h5> - Soulier 1 ( x kilomètres) </h5>
+                <h5> - Soulier 2 ( x kilomètres) </h5>
+            </div>
+        </div>
+
+        <!-- Dernières activités -->
+        <div class="row">
+            <div class="col-md-12 mt-2">
+                <h3> Dernières activités : </h3>
+
+                <div id="containerActivites">
+                    <div class="card-deck mt-2">
+                        <div class="card col-lg-4">
+                            <img class="card-img-top" src="../static/photo2.jpg">
+                            <div class="card-block">
+                                <h1 class="card-title">Nom de l'activité1</h1>
+                                <p class="card-text">Les détails sur l'activité</p>
+                                <a href="{{ url_for( 'activite', id=0) }}" class="btn btn-primary">Détails</a>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Date</small>
+                            </div>
+                        </div>
+
+                        <div class="card col-lg-4">
+                            <img class="card-img-top" src="../static/photo2.jpg">
+                            <div class="card-block">
+                                <h1 class="card-title">Nom de l'activité1</h1>
+                                <p class="card-text">Les détails sur l'activité</p>
+                                <a href="{{ url_for( 'activite', id=0) }}" class="btn btn-primary">Détails</a>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Date</small>
+                            </div>
+                        </div>
+
+                        <div class="card col-lg-4">
+                            <img class="card-img-top" src="../static/photo2.jpg">
+                            <div class="card-block">
+                                <h1 class="card-title">Nom de l'activité1</h1>
+                                <p class="card-text">Les détails sur l'activité</p>
+                                <a href="{{ url_for( 'activite', id=0) }}" class="btn btn-primary">Détails</a>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Date</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
-
-
 
 </html>

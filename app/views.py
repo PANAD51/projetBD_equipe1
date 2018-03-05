@@ -19,3 +19,11 @@ def profil (user):
 @app.route('/activite/<id>', methods=['GET','POST'])
 def activite (id):
     return render_template("activite.html")
+
+@app.route('/athlete', methods=['GET','POST'])
+def athlete ():
+        return render_template("athlete.html")
+
+@app.route('/ajoutActivite', methods=['GET','POST'])
+def ajoutActivite ():
+        return render_template("ajoutActivite.html")

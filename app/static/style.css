@@ -94,7 +94,7 @@ html {
 /* Formulaire d'inscription */
 
 .modal-header {
-    background: #428bca;
+    background: #428BCA;
 }
 
 .modal-body {
@@ -105,14 +105,17 @@ html {
 /* Style pour Activite */
 
 #map {
-    width: 50%;
-    height: 80vh;
-    margin-left: 50%;
-    border: 5px solid #428BCA;
-    border-radius: 25px;
+    height: 35vh;
 }
 
 #graphique {
-    width: 50%;
-    margin-right: 40%;
+    height: 35vh;
+}
+
+
+/* Photo de profil */
+
+#photoDeProfil {
+    border: 3px solid #428BCA;
+    border-radius: 50px;
 }

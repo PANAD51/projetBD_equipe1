@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 
+<!-- Chargement des fichiers nécessaires (librairies, plugins, fichier de style) -->
 {% include "header.html" %}
 
 <body>
-
     <!-- Barre de navigation : Logo + bouton S'enregistrer -->
     <nav class="navbar navbar-custom">
         <p class="navbar-brand">
@@ -12,153 +12,155 @@
 
         <div id="boutonBarreNavigation">
             <button class="btn btn-primary float-right" type="button" data-toggle="modal" data-target="#registration-form">S'enregistrer</button>
-            <button class="btn btn-primary float-right" type="button" data-toggle="modal" data-target="#registration-form">Se connecter</button>
+            <button class="btn btn-primary float-right" type="button" data-toggle="modal" data-target="#connexion-form">Se connecter</button>
         </div>
     </nav>
 
-    <!-- Contenu sur la page connexion : Image + description -->
-    <div class=" container-fluid mt-5">
-        <div class="row h-100 ">
-            <div id="descriptionAcceuil">
+    <div class="container-fluid">
+        <!-- Contenu sur la page connexion : Image + description de l'application -->
+        <div class="mt-5">
+            <div class="row h-100 ">
+                <div id="descriptionAcceuil">
 
-                <!-- Image -->
-                <img src="../static/photo2.jpg" id="imageConnexion">
+                    <!-- Image -->
+                    <img src="../static/photo2.jpg" id="imageConnexion">
 
-                <!-- Description du site -->
-                <h1> Bienvenue sur Application X </h1>
-                <p> Blablabla</p>
-                <p> Blablabla2</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Formulaire de connexion (lors d'un click sur le bouton Se connecter) -->
-    <div class="modal fade" id="registration-form">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <!-- Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title" id="">Se connecter</h4>
-                </div>
-
-                <!-- Body -->
-                <div class="modal-body">
-                    <form action="{{ url_for('tableauDeBord') }}" method="post">
-
-                        <!-- Courriel -->
-                        <div class="row mt-4">
-                            <label class="control-label col-md-5" for="courriel"> Courriel </label>
-                            <div class="col-md-7">
-                                <input class="form-control" id="courriel" name="courriel" type="text" />
-                            </div>
-                        </div>
-
-                        <!-- Mot de passe -->
-                        <div class="row mt-4">
-                            <label class="control-label col-md-5 requiredField" for="motDePasse"> Mot de passe </label>
-                            <div class="col-md-7">
-                                <input class="form-control" id="motDePasse" name="motDePasse" type="text" />
-                            </div>
-                        </div>
-
-                        <!-- Footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                            <button class="btn btn-primary" name="seConnecter" type="submit">Valider</button>
-                        </div>
-                    </form>
+                    <!-- Description du site -->
+                    <h1> Bienvenue sur Application X </h1>
+                    <p> Blablabla</p>
+                    <p> Blablabla2</p>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Formulaire d'enregistrement  (lors d'un click sur le bouton S'enregistrer) -->
-    <div class="modal fade" id="registration-form">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <!-- Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title" id="">Créer un compte</h4>
+        <!-- Formulaire de connexion (lors d'un click sur le bouton Se connecter) -->
+        <div class="modal fade" id="connexion-form">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="">Se connecter</h4>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="modal-body">
+                        <form action="{{ url_for('tableauDeBord') }}" method="post">
+
+                            <!-- Courriel -->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5" for="courriel"> Courriel </label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="courriel" name="courriel" type="text" />
+                                </div>
+                            </div>
+
+                            <!-- Mot de passe -->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5 requiredField" for="motDePasse"> Mot de passe </label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="motDePasse" name="motDePasse" type="text" />
+                                </div>
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                <button class="btn btn-primary" name="seConnecter" type="submit">Valider</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+            </div>
+        </div>
 
-                <!-- Body -->
-                <div class="modal-body">
-                    <form action="{{ url_for('tableauDeBord') }}" method="post">
+        <!-- Formulaire d'enregistrement  (lors d'un click sur le bouton S'enregistrer) -->
+        <div class="modal fade" id="registration-form">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="">Créer un compte</h4>
+                    </div>
 
-                        <!-- Nom -->
-                        <div class="row mt-4">
-                            <label class="control-label col-md-5" for="nom"> Nom </label>
-                            <div class="col-md-7">
-                                <input class="form-control" id="nom" name="nom" type="text" />
+                    <!-- Body -->
+                    <div class="modal-body">
+                        <form action="{{ url_for('tableauDeBord') }}" method="post">
+
+                            <!-- Nom -->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5" for="nom"> Nom </label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="nom" name="nom" type="text" />
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Prénom -->
-                        <div class="row mt-4">
-                            <label class="control-label col-md-5" for="prenom"> Prénom </label>
-                            <div class="col-md-7">
-                                <input class="form-control" id="prenom" name="prenom" type="text" />
+                            <!-- Prénom -->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5" for="prenom"> Prénom </label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="prenom" name="prenom" type="text" />
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Courriel -->
-                        <div class="row mt-4">
-                            <label class="control-label col-md-5" for="courriel"> Courriel </label>
-                            <div class="col-md-7">
-                                <input class="form-control" id="courriel" name="courriel" type="text" />
+                            <!-- Courriel -->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5" for="courriel"> Courriel </label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="courriel" name="courriel" type="text" />
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Date de naissance -->
-                        <div class="row mt-4">
-                            <label class="control-label col-md-5" for="dateDeNaissance"> Date de naissance </label>
-                            <div class="col-md-7">
-                                <input class="form-control" type="date" id="dateDeNaissance" name="dateDeNaissance">
+                            <!-- Date de naissance -->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5" for="dateDeNaissance"> Date de naissance </label>
+                                <div class="col-md-7">
+                                    <input class="form-control" type="date" id="dateDeNaissance" name="dateDeNaissance">
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Sport favori -->
-                        <div class="row mt-4">
-                            <label class="control-label col-md-5" for="sportFavori"> Sport favori </label>
-                            <div class="col-md-7">
-                                <select class="custom-select" id="sportFavori" name="sportFavori">
+                            <!-- Sport favori -->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5" for="sportFavori"> Sport favori </label>
+                                <div class="col-md-7">
+                                    <select class="custom-select" id="sportFavori" name="sportFavori">
                                         <option value="courseAPied">Course à pied</option>
                                         <option value="marche">Marche</option>
                                         <option value="velo">Vélo</option>
                                         <option value="nage">Nage</option>
                                         <option value="skiDeFond">Ski de fond</option> 
                                     </select>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Mot de passe -->
-                        <div class="row mt-4">
-                            <label class="control-label col-md-5 requiredField" for="motDePasse"> Mot de passe </label>
-                            <div class="col-md-7">
-                                <input class="form-control" id="motDePasse" name="motDePasse" type="password" />
+                            <!-- Mot de passe -->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5 requiredField" for="motDePasse"> Mot de passe </label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="motDePasse" name="motDePasse" type="password" />
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Confirmer Mot de passe -->
-                        <div class="row mt-4">
-                            <label class="control-label col-md-5 requiredField" for="motDePasseConfirm"> Confirmer le mot de passe </label>
-                            <div class="col-md-7">
-                                <input class="form-control" id="motDePasse" name="motDePasseConfirm" type="password" />
+                            <!-- Confirmer Mot de passe -->
+                            <div class="row mt-4">
+                                <label class="control-label col-md-5 requiredField" for="motDePasseConfirm"> Confirmer le mot de passe </label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="motDePasse" name="motDePasseConfirm" type="password" />
+                                </div>
                             </div>
-                        </div>
 
 
-                        <!-- Footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                            <button class="btn btn-primary" name="valider" type="submit">Valider</button>
-                        </div>
-                    </form>
+                            <!-- Footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                <button class="btn btn-primary" name="valider" type="submit">Valider</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+
 </body>
 
 </html>
